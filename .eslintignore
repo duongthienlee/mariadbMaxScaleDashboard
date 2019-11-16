@@ -1,0 +1,2 @@
+# Ignore checking eslint on dist folder
+dist
