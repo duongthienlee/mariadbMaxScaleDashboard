@@ -4,7 +4,8 @@ const base = require('./base');
 
 const devConfig = {
   devServer: {
-    disableHostCheck: true,
+    port: "8080",
+    disableHostCheck: false,
     historyApiFallback: true,
     hot: true,
     inline: true,
