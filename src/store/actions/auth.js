@@ -8,7 +8,7 @@ export const LOGIN_FAILED = 'LOGIN_FAILED';
 export function auth(credentials) {
     return dispatch => {
         dispatch({ type: LOGIN, credentials: credentials });
-        return axios.get('http://54.229.207.205:8989/v1/servers', { auth: credentials })
+        return axios.get('https://54.229.207.205:8989/v1/servers', { auth: credentials })
             .then((response) => {
                 const { data } = response
                 //Fake jwt_token
