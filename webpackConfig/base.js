@@ -13,11 +13,12 @@ const config = {
     extensions: ['.js', '.jsx', '.less', '.gif', '.png', '.jpg', '.jpeg', '.svg', '.ico'],
     alias: {
       config: `${PATHS.input}config/${process.env.NODE_ENV || "development"}.js`,
-      actions: `${PATHS.input}actions`,
-      reducers: `${PATHS.input}reducers`,
+      store: `${PATHS.input}store`,
+      utils: `${PATHS.input}utils`,
       components: `${PATHS.input}components`,
-      pages:  `${PATHS.input}pages`,
+      pages: `${PATHS.input}pages`,
       containers: `${PATHS.input}containers`,
+      theme: `${PATHS.input}theme`,
       assets: `${PATHS.input}assets`,
       style: `${PATHS.input}style`
     }
@@ -44,7 +45,7 @@ const config = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader", "eslint-loader"]
+        use: ["react-hot-loader/webpack", "babel-loader", "eslint-loader"]
       },
       {
         test: /\.(js|jsx)$/,

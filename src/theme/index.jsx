@@ -4,22 +4,22 @@ import { createMuiTheme } from '@material-ui/core/styles';
 export const theme = createMuiTheme({
     palette: {
         primary: {
-            light: '#ffd587',
-            main: '#E0A458',
-            dark: '#ab752b',
-            contrastText: '#fff',
+            light: '#ffc962',
+            main: '#F49831',
+            dark: '#bc6a00',
+            contrastText: '#000000',
 
 
         },
         secondary: {
-            light: '#ffffff',
-            main: '#EBEBEB',
-            dark: '#b9b9b9',
-            contrastText: '#000',
+            light: '#3b4c89',
+            main: '#00255B',
+            dark: '#000031',
+            contrastText: '#ffffff',
 
         }
     },
     typography: {
-        fontFamily: "'Roboto', 'Helvetica', 'Arial', 'sans-serif'"
+        fontFamily: "'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif"
     }
 });
