@@ -5,7 +5,6 @@ import PrivateRoute from './routes/PrivateRoute'
 import PublicRoute from './routes/PublicRoute'
 import { useSelector } from 'react-redux'
 
-
 const App = () => {
     const { isLoggedIn, token } = useSelector(state => state.auth)
     console.log("token", token)
@@ -33,7 +32,6 @@ const App = () => {
                             exact={route.exact}
                             component={route.component}
                         />
-
                 ))}
             </Switch>
         </HashRouter>
