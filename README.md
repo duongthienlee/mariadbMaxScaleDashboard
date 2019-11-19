@@ -7,9 +7,16 @@ Only MariaDB and those who has been authorised have the access to login
 
 ### The application uses latest technology such as react hooks, react-table V7, redux V4, MaterialUI V4,...
 The webpack boilerplate for this application has been configured by me.
-https://github.com/duongthienlee/webpack-react-from-scratch
+[My Webpack boilerplate ](https://github.com/duongthienlee/webpack-react-from-scratch)
+
 
 ### The application intends to use HashRouter as for the sake of simplicity, to be able to host on GitHub Page
+* However, GitHub page doesn't allow to turn off "Enforce HTTPS", but the testing Restful API currently supports http only.
+So in order to run this application, you need to run it locally and disable CORS, for example on Chrome, MacOs:
+run this command or you can use Automator on MacOs to run the following script as an App.
+
+`open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security`
+
 ### The application is currently supposed to have 3 page views:
 #### Basic Auth
 * Login view (/login)
