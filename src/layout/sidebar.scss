@@ -1,0 +1,170 @@
+ /*------------------------------------------ sidebar styling ----------------------------------------------*/
+ /* styling nav-username */
+ .nav-username {
+     color: #ffffff;
+     font-size: 1.167em;
+     text-align: center;
+     padding: 15px 0px;
+
+     &_divider {
+         width: 100%;
+         height: 1px;
+         background-color: rgba(255, 255, 255, 0.2);
+     }
+ }
+
+
+ .nav-link {
+     display: block;
+ }
+
+ /* styling sidebar menu content*/
+ /* Add a background img*/
+ .bm-menu-wrap {
+     -webkit-font-smoothing: antialiased;
+     width: 200px !important;
+     height: 100%;
+     line-height: 30px;
+     font-size: 12px;
+     text-transform: uppercase;
+
+     /* styling background color transparency*/
+     .bm-menu {
+         width: 200px !important;
+         height: 100%;
+         background-color: #00255B;
+
+         .bm-item-list {
+             .bm-item {
+                 margin-top: 0px;
+                 padding: 0px;
+                 height: 100%;
+
+                 ul {
+                     margin: 0px;
+                     padding: 20px 0px;
+
+                     &:focus {
+                         outline: 0;
+                     }
+
+                     li {
+                         text-align: left !important;
+                         position: relative;
+                         display: block;
+                         padding: 0px;
+
+                         &:focus {
+                             outline: 0;
+                         }
+
+                         a {
+                             margin: 5px 15px;
+                             border-radius: 4px;
+                             padding: 0px 16px;
+                             transition: 0.5s;
+                             display: flex;
+
+                             &:focus {
+                                 outline: 0;
+                             }
+
+                             svg {
+                                 display: flex;
+                                 justify-content: flex-start;
+                                 align-items: center;
+                             }
+
+                             p {
+
+                                 display: flex;
+                                 align-items: center;
+                                 margin: 0px 0px 0px 10px;
+                                 font-weight: 600;
+                                 font-size: 12px;
+                                 color: #ffffff;
+                                 opacity: 0.72;
+                                 padding: 0px;
+                             }
+                         }
+
+                         &:hover>a {
+                             margin: 5px 15px;
+                             border-radius: 4px;
+                             background-color: rgba(255, 255, 255, 0.13);
+
+                             p {
+                                 opacity: 1
+                             }
+
+                             .nav-icon {
+                                 opacity: 1
+                             }
+                         }
+
+                         &.active>a {
+                             background-color: rgba(255, 255, 255, 0.23);
+
+                             p {
+                                 opacity: 1
+                             }
+
+                             .nav-icon {
+                                 opacity: 1
+                             }
+                         }
+                     }
+                 }
+             }
+         }
+     }
+
+ }
+
+ /* Position and sizing of clickable cross button */
+ .bm-cross-button {
+     height: 24px;
+     width: 24px;
+ }
+
+ /* Color/shape of close button cross */
+ .bm-cross {
+     background: #ffffff;
+ }
+
+ /*------------------------------------------ Toogler button styling ----------------------------------------------*/
+ /* Position and sizing of burger button */
+ .bm-burger-button {
+     position: fixed;
+     top: 21px;
+     left: 16px;
+     width: 20px;
+     height: 20px;
+
+     .bm-burger-bars {
+         background-color: rgba(0, 0, 0, 0.8);
+         margin: auto;
+     }
+ }
+
+ .bm-burger-button:hover {
+     .bm-burger-bars {
+         opacity: 1 !important;
+         background-color: rgba(0, 0, 0, 1);
+     }
+ }
+
+ .nav-footer {
+     position: absolute;
+     bottom: 30px;
+     left: 50%;
+     transform: translateX(-50%);
+
+     img {
+         width: 60px;
+     }
+ }
+
+ #page-wrap {
+     background-color: rgba(203, 203, 210, 0.15);
+ }
