@@ -5,8 +5,11 @@ This is a testing dashboard application for MariaDB MaxScale
 ## How to start(prefarably using yarn)
 node v10.16.0
 install node_modules
+
 `yarn`
+
 `yarn start`
+
 disable CORS on browser to login to the application at port 8080: http://localhost:8080
 
 ### The application require authentication to access the dashboard.
