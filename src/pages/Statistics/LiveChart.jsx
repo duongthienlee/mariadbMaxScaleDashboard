@@ -10,6 +10,12 @@ const useStyles = makeStyles(theme => ({
     }
 
 }))
+const dynamicColors = () => {
+    let r = Math.floor(Math.random() * 255);
+    let g = Math.floor(Math.random() * 255);
+    let b = Math.floor(Math.random() * 255);
+    return "rgb(" + r + "," + g + "," + b + ")";
+};
 
 const LiveChart = ({ threads }) => {
     const classes = useStyles()
@@ -22,8 +28,8 @@ const LiveChart = ({ threads }) => {
             let obj = {
                 type: "line",
                 label: `THREAD ID - ${threads[i].id}`,
-                backgroundColor: theme.palette.primary.light, // background of the line
-                borderColor: theme.palette.primary.main, // line color
+                backgroundColor: 'rgba(0,0,0,0)', // background of the line
+                borderColor: dynamicColors(i, threads.length),//theme.palette.primary.main, // line color
                 pointBackgroundColor: theme.palette.secondary.main,
                 pointBorderColor: "rgba(0, 0, 0, 0)",
                 borderWidth: 2,
