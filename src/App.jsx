@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Redirect, Switch } from 'react-router-dom'
 import { routes } from './routes'
-import PrivateRoute from './routes/PrivateRoute'
-import PublicRoute from './routes/PublicRoute'
+import PrivateRoute from 'components/PrivateRoute'
+import PublicRoute from 'components/PublicRoute'
 import { useSelector } from 'react-redux'
 
 const App = () => {
