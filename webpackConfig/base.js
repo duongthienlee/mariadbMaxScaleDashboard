@@ -12,7 +12,6 @@ const config = {
   resolve: {
     extensions: ['.js', '.jsx', '.less', '.gif', '.png', '.jpg', '.jpeg', '.svg', '.ico'],
     alias: {
-      routes: `${PATHS.input}`,
       config: `${PATHS.input}config/${process.env.NODE_ENV || "development"}.js`,
       store: `${PATHS.input}store`,
       utils: `${PATHS.input}utils`,
