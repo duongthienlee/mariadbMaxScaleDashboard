@@ -2,6 +2,7 @@
 My own configuration: Support webpack 4 configuration mode: development & production
 This is a testing dashboard application for MariaDB MaxScale
 
+
 ## How to start locally(prefarably using yarn)
 node v10.16.0
 install node_modules
@@ -11,6 +12,22 @@ install node_modules
 `yarn start`
 
 disable CORS on browser to login to the application at port 8080: http://localhost:8080
+### Or Live version(hosted on Netlify) (Still need to disable CORS)
+[https://maxscaledashboardtest.netlify.com/ ](https://maxscaledashboardtest.netlify.com/)
+And the domain is served from https while requesting http API, hence need to load unsafe script
+
+* Workflow
+
+Open it on chrome and enable to load unsafe script (Insecure content blocked)
+
+First click on the shield icon in the right corner of the URL bar address
+
+Then click "Load Unsafe Scripts" in order to login to the dashboard
+
+A Pop Up screen will with the content
+
+* Page Not Found Looks like you've followed a broken link or entered a URL that doesn't exist on this site. Back to our site
+Click "Back to our site" then login again, it should work now
 
 ### The application require authentication to access the dashboard.
 Only MariaDB and those who has been authorised have the access to login

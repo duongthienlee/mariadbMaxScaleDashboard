@@ -6,7 +6,7 @@ import update from 'immutability-helper';
 const useStyles = makeStyles(theme => ({
     chartContainer: {
         margin: 50,
-        height: 400
+        height: 450
     }
 
 }))
@@ -23,15 +23,21 @@ const LiveChart = ({ threads }) => {
 
     const genDataSet = (threads) => {
         let arr = [];
-
+        let lineColors = []
+        let pointColors = []
         for (let i = 0; i < threads.length; i++) {
+            lineColors.push(dynamicColors(i, threads.length))
+            pointColors.push(dynamicColors(i, threads.length))
             let obj = {
                 type: "line",
                 label: `THREAD ID - ${threads[i].id}`,
-                backgroundColor: 'rgba(0,0,0,0)', // background of the line
-                borderColor: dynamicColors(i, threads.length),//theme.palette.primary.main, // line color
-                pointBackgroundColor: theme.palette.secondary.main,
-                pointBorderColor: "rgba(0, 0, 0, 0)",
+
+                backgroundColor: lineColors[i], // background of the line
+                borderColor: lineColors[i],//theme.palette.primary.main, // line color
+
+                pointBackgroundColor: pointColors[i],
+                pointBorderColor: pointColors[i],
+
                 borderWidth: 2,
                 lineTension: 0.25,
                 data: [threads[i].value.toString()]
@@ -75,6 +81,7 @@ const LiveChart = ({ threads }) => {
             <Chart
                 data={lineChartData}
                 options={{
+                    showLines: true,
                     responsive: true,
                     animation: {
                         duration: 250 * 1.5,
@@ -82,7 +89,8 @@ const LiveChart = ({ threads }) => {
                     },
                     maintainAspectRatio: false,
                     tooltips: {
-                        enabled: true
+                        enabled: true,
+
                     },
                     scales: {
                         xAxes: [
@@ -95,12 +103,14 @@ const LiveChart = ({ threads }) => {
                             }
                         ],
                         yAxes: [{
+                            display: true,
                             ticks: {
                                 max: 100,
                                 min: 0
                             }
                         }]
-                    }
+                    },
+
                 }}
             />
         </div>
