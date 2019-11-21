@@ -7,10 +7,9 @@ import { useSelector } from 'react-redux'
 
 const App = () => {
     const { isLoggedIn, token } = useSelector(state => state.auth)
-    console.log("token", token)
-    let inMemoryToken = localStorage.token // fakeToken
-    // check if user is already login or have inMemoryToken, for the sake of simplicity, here is a Fake Token
-    const isAuth = isLoggedIn || inMemoryToken
+    let localToken = localStorage.getItem("token")
+    // check if user is already login or have localToken, for the sake of simplicity, it is just a fake token
+    const isAuth = isLoggedIn || token !== null || localToken !== null
 
     return (
         <BrowserRouter>

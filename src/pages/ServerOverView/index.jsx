@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Container from '@material-ui/core/Container'
 import { makeStyles } from '@material-ui/core/styles'
@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import Link from '@material-ui/core/Link'
 import { useHistory } from "react-router-dom"
+import { fetchServerData } from 'store/actions/servers'
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -38,16 +39,23 @@ const useStyles = makeStyles(theme => ({
 
 
 const ServerOverView = () => {
+    const dispatch = useDispatch()
+
+    React.useEffect(() => {
+        let credentials = localStorage.getItem("credentials")
+        dispatch(fetchServerData(credentials))
+
+    }, [dispatch])
 
     let history = useHistory()
-    const { data: { data: serverData } } = useSelector(state => state.auth)
+    const { data: serverData } = useSelector(state => state.servers)
     const classes = useStyles()
 
     return (
         <Container className={classes.root} maxWidth="lg">
             <CssBaseline />
             <Grid container spacing={4}>
-                {serverData.map(server => {
+                {serverData && serverData.map(server => {
                     return (
                         <Grid key={server.id} item xs={4}>
                             <Paper className={classes.paper}>

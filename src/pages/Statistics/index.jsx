@@ -11,16 +11,13 @@ const Statistics = (props) => {
             setTimeout(resolve.bind(null, v), t)
         });
     }
-    function loop() {
-        fetchThreads()
-    }
+
+    let credentials = localStorage.getItem("credentials")
+
     async function fetchThreads() {
         try {
             let res = await axios.get(`${config.api.root}/v1/maxscale/threads`, {
-                auth: {
-                    username: "user3",
-                    password: "blackzebra31"
-                }
+                auth: credentials
             })
             let { data } = await res.data;
             let threads = await data.reduce((accumulator, _, index, array) => {
@@ -36,7 +33,7 @@ const Statistics = (props) => {
             console.log("error", error);
         }
         await delay(1000).then(() => {
-            return loop()
+            return fetchThreads()
         });
     }
 
@@ -45,10 +42,13 @@ const Statistics = (props) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    console.log("threads", threads)
+
     return (
         <div>
-            <LiveChart threads={threads} />
+            {threads.length > 0 &&
+                <LiveChart
+                    threads={threads} />
+            }
         </div>
     )
 
