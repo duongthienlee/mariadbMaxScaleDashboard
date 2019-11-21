@@ -2,11 +2,6 @@
 My own configuration: Support webpack 4 configuration mode: development & production
 This is a testing dashboard application for MariaDB MaxScale
 
-## Live at Netlify
-[https://maxscaledashboardtest.netlify.com](https://maxscaledashboardtest.netlify.com)
-
-Need to disable CORS on your browser to login
-
 ## How to start locally(prefarably using yarn)
 node v10.16.0
 install node_modules
