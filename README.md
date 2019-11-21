@@ -2,7 +2,7 @@
 My own configuration: Support webpack 4 configuration mode: development & production
 This is a testing dashboard application for MariaDB MaxScale
 
-## How to start(prefarably using yarn)
+## How to start locally(prefarably using yarn)
 node v10.16.0
 install node_modules
 
