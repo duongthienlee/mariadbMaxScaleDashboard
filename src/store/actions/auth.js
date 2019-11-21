@@ -11,17 +11,16 @@ export function auth(credentials) {
         dispatch({ type: LOGIN, credentials: credentials })
         return axios.get(`${config.api.root}/v1/servers`, { auth: credentials })
             .then((response) => {
-                const { data } = response
+                const { data } = response.data
                 //Fake jwt_token
-                let inMemoryToken = {
+                let token = {
                     token: "jwt_token",
                     expiry: "jwt_token_expiry"
                 }
-                dispatch({ type: LOGIN_OK, data, inMemoryToken })
+                dispatch({ type: LOGIN_OK, data, token, credentials })
             })
-            .catch((response) => {
-                const { data } = response
-                dispatch({ type: LOGIN_FAILED, data })
+            .catch((error) => {
+                dispatch({ type: LOGIN_FAILED, error })
             })
     }
 }
