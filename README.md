@@ -10,8 +10,8 @@ The webpack boilerplate for this application has been configured by me.
 [My Webpack boilerplate ](https://github.com/duongthienlee/webpack-react-from-scratch)
 
 
-### The application intends to use HashRouter as for the sake of simplicity, to be able to host on GitHub Page
-* However, GitHub page doesn't allow to turn off "Enforce HTTPS", but the testing Restful API currently supports http only.
+### Rest API
+the testing Restful API currently supports http only.
 So in order to run this application, you need to run it locally and disable CORS, for example on Chrome, MacOs:
 run this command or you can use Automator on MacOs to run the following script as an App.
 
