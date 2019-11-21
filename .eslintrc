@@ -31,6 +31,7 @@
               ]
           }
       ],
+      "no-fallthrough":0,
       "no-func-assign": 0,
       "func-names": 0,
       "comma-dangle": 0,
