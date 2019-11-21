@@ -1,5 +1,5 @@
-import { fade, withStyles } from '@material-ui/core/styles';
-import { InputBase } from '@material-ui/core';
+import { fade, withStyles } from '@material-ui/core/styles'
+import { InputBase } from '@material-ui/core'
 
 const BootstrapInput = withStyles(theme => ({
     root: {
@@ -21,7 +21,7 @@ const BootstrapInput = withStyles(theme => ({
             borderColor: theme.palette.primary.main
         }
     }
-}))(InputBase);
+}))(InputBase)
 
 
-export default BootstrapInput;
+export default BootstrapInput

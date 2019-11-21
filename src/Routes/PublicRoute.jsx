@@ -1,14 +1,12 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import React from 'react'
+import { Route, Redirect } from 'react-router-dom'
 
-const PublicRoute = ({ component: Component, isAuth, ...rest }) => {
-    return (
-        <Route {...rest} render={props => (
-            isAuth ?
-                <Redirect to="/" />
-                : <Component {...props} />
-        )} />
-    );
-};
+const PublicRoute = ({ component: Component, isAuth, ...rest }) =>
 
-export default PublicRoute;
+    <Route {...rest} render={props => (
+        isAuth ?
+            <Redirect to="/server" />
+            : <Component {...props} />
+    )} />
+
+export default PublicRoute

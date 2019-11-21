@@ -1,6 +1,7 @@
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const base = require('./base');
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const base = require('./base')
+
 const productionConfig = {
   plugins: [
     new webpack.optimize.AggressiveMergingPlugin(),
@@ -10,6 +11,6 @@ const productionConfig = {
       }
     })
   ]
-};
+}
 
-module.exports = merge(base, productionConfig);
+module.exports = merge(base, productionConfig)

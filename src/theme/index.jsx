@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles'
 
 
 export const theme = createMuiTheme({
@@ -22,4 +22,4 @@ export const theme = createMuiTheme({
     typography: {
         fontFamily: "'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif"
     }
-});
+})

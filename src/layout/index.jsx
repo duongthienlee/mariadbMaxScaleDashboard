@@ -9,8 +9,6 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Paper from '@material-ui/core/Paper'
 import Breadcrumbs from '@material-ui/core/Breadcrumbs'
-
-
 import './sidebar.scss'
 
 const useStyles = makeStyles(theme => ({
@@ -33,28 +31,28 @@ const useStyles = makeStyles(theme => ({
         justifyContent: 'center',
         alignItems: 'center'
     }
-}));
+}))
 
 const Layout = (props) => {
+
     const [menuOpen, setMenuOpen] = React.useState(false)
-    let location = useLocation();
-    // This keeps your state in sync with the opening/closing of the menu
-    // via the default means, e.g. clicking the X, pressing the ESC key etc.
+    let location = useLocation()
+
     function handleStateChange(state) {
         setMenuOpen(state.isOpen)
-
     }
-    // This can be used to close the menu, e.g. when a user clicks a menu item
+
     function closeMenu() {
         setMenuOpen(false)
     }
 
-    // check the current path to assign active class to each li tag.
     function activeRoute(routeName) {
-        return location.pathname.indexOf(routeName) > -1 ? "active" : "";
+        return routeName === location.pathname ? "active" : ""
     }
 
-    const classes = useStyles();
+    const classes = useStyles()
+    const pathnames = location.pathname.split("/").filter(x => x);
+
     return (
         <div id="outer-container" style={{ height: '100%' }}>
             <Menu isOpen={menuOpen}
@@ -65,7 +63,7 @@ const Layout = (props) => {
                     <ul>
                         {routes.map((route, key) => {
                             /* sidebar section */
-                            if (!route.isPublic)
+                            if (!route.isPublic && route.isSideBar)
                                 return (
                                     <li
                                         className={activeRoute(route.path)}
@@ -81,10 +79,9 @@ const Layout = (props) => {
                                             <p>{route.name}</p>
                                         </NavLink>
                                     </li>
-                                );
-                            return null;
-                        })
-                        }
+                                )
+                            return null
+                        })}
                     </ul>
                     <span className="nav-footer"><img src={logo} alt="mariaDbMaxScaleLogo" /></span>
                 </div>
@@ -94,31 +91,36 @@ const Layout = (props) => {
                 {/* Navbar section */}
                 <AppBar position="static">
                     <Toolbar>
-
                     </Toolbar>
                 </AppBar>
                 <Paper elevation={0} className={classes.breadcrumbs}>
                     <Breadcrumbs aria-label="breadcrumb">
-                        {routes.map((route, key) => {
-                            /* breadcrumbs section */
-                            if (!route.isPublic && activeRoute(route.path) === "active")
-                                return (
-                                    <NavLink key={key} to={route.path} onClick={() => console.log("breadcrumb click")} className={classes.link}>
-                                        {route.breadCrumbIcon}
-                                        {route.name}
+                        {pathnames.map((value, index) => {
+                            const last = index === pathnames.length - 1;
+                            const to = `/${pathnames.slice(0, index + 1).join("/")}`;
+
+                            const foundRoute = routes.find(route => route.path === to);
+
+                            return last ? (
+
+                                <NavLink key={to} to={to} className={classes.link}>
+                                    {foundRoute && foundRoute.breadCrumbIcon}
+                                    {value}
+                                </NavLink>
+                            ) : (
+                                    <NavLink className={classes.link} to={to} key={to}>
+                                        {foundRoute && foundRoute.breadCrumbIcon}
+                                        {value}
                                     </NavLink>
                                 );
-                            return null;
-                        })
-                        }
+                        })}
                     </Breadcrumbs>
+
                 </Paper>
                 {props.children}
 
             </main>
         </div>
-
-
-    );
+    )
 }
-export default Layout;
+export default Layout

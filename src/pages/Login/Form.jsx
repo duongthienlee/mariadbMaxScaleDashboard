@@ -1,8 +1,8 @@
 
 
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { InputLabel, FormControl, Button, FormControlLabel, Checkbox, } from '@material-ui/core';
+import React, { useState } from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import { InputLabel, FormControl, Button, FormControlLabel, Checkbox, } from '@material-ui/core'
 import BootstrapInput from 'components/BootstrapInput'
 import { auth } from 'store/actions/auth'
 import { useDispatch } from 'react-redux'
@@ -19,13 +19,15 @@ const useStyles = makeStyles(theme => ({
         width: '100%', // Fix IE 11 issue.
         marginTop: theme.spacing(1),
     }
-}));
+}))
 
 const Form = () => {
-    const dispatch = useDispatch();
 
-    const classes = useStyles();
+    const dispatch = useDispatch()
     const [userInput, setUserInput] = useState({ username: "", password: "" })
+
+    const classes = useStyles()
+
 
     const handleChange = e => {
         e.preventDefault()
@@ -34,10 +36,12 @@ const Form = () => {
             [e.target.name]: e.target.value
         })
     }
+
     const submitLogin = e => {
         e.preventDefault()
         dispatch(auth(userInput))
     }
+
     return (
         <form className={classes.formWrapper} noValidate>
             <FormControl className={classes.form}>
@@ -86,7 +90,7 @@ const Form = () => {
                 Sign In
             </Button>
         </form>
-    );
+    )
 }
 
-export default Form;
+export default Form

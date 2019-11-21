@@ -1,23 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import {
     Avatar, CssBaseline, TextField, FormControlLabel, Checkbox, Link,
     Paper, Box, Grid, Typography
-} from '@material-ui/core';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import { makeStyles } from '@material-ui/core/styles';
+} from '@material-ui/core'
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
+import { makeStyles } from '@material-ui/core/styles'
 import Form from './Form'
 
-function Copyright() {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            Copyright ©
+const Copyright = () =>
+
+    <Typography variant="body2" color="textSecondary" align="center">
+        Copyright ©
             <Link color="inherit" href="https://thienwinchester.netlify.com">
-                Thien Ly
+            Thien Ly
             </Link>{' '}
-            2019.
+        2019.
         </Typography>
-    );
-}
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -46,10 +44,10 @@ const useStyles = makeStyles(theme => ({
     submit: {
         margin: theme.spacing(3, 0, 2),
     },
-}));
+}))
 
 const Login = () => {
-    const classes = useStyles();
+    const classes = useStyles()
 
     return (
         <Grid container component="main" className={classes.root}>
@@ -68,7 +66,7 @@ const Login = () => {
                 </div>
             </Grid>
         </Grid>
-    );
+    )
 }
 
-export default Login;
+export default Login
