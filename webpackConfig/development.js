@@ -1,6 +1,6 @@
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const base = require('./base');
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const base = require('./base')
 
 const devConfig = {
   devServer: {
@@ -18,6 +18,6 @@ const devConfig = {
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ]
-};
+}
 
-module.exports = merge(base, devConfig);
+module.exports = merge(base, devConfig)

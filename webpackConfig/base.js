@@ -1,12 +1,12 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const path = require("path");
-const webpack = require("webpack");
+const HtmlWebPackPlugin = require("html-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const CopyWebpackPlugin = require("copy-webpack-plugin")
+const path = require("path")
+const webpack = require("webpack")
 
 const PATHS = {
   input: path.join(__dirname, "/../src/")
-};
+}
 const config = {
   devtool: "source-map",
   resolve: {
@@ -84,6 +84,6 @@ const config = {
       },
     ]
   }
-};
+}
 
-module.exports = config;
+module.exports = config

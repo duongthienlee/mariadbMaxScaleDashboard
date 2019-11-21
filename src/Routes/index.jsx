@@ -1,9 +1,10 @@
 import React from 'react'
-import Overview from 'pages/Overview'
+import ServerOverView from 'pages/ServerOverView'
 import Statistics from 'pages/Statistics'
+import Server from 'pages/Server'
 import Login from 'pages/Login'
 import HomeIcon from '@material-ui/icons/Home'
-import EqualizerIcon from '@material-ui/icons/Equalizer';
+import EqualizerIcon from '@material-ui/icons/Equalizer'
 
 
 const iconStyle = {
@@ -13,17 +14,28 @@ const iconStyle = {
 }
 export const routes = [
     {
-        path: "/",
-        name: "OVERVIEW",
+        path: "/server",
+        name: "SERVER",
         icon: <HomeIcon color={"primary"} fontSize={"large"} />,
+        isSideBar: true,
         breadCrumbIcon: <HomeIcon style={iconStyle} color={"primary"} />,
         exact: true,
         isPublic: false,
-        component: () => <Overview />
+        component: () => <ServerOverView />
+    },
+    {
+        path: "/server/:id",
+        name: "Server",
+        icon: <EqualizerIcon color={"primary"} fontSize={"large"} />,
+        breadCrumbIcon: <EqualizerIcon style={iconStyle} color={"primary"} fontSize={"large"} />,
+        exact: false,
+        isPublic: false,
+        component: () => <Server />
     },
     {
         path: "/statistics",
         name: "STATISTICS",
+        isSideBar: true,
         icon: <EqualizerIcon color={"primary"} fontSize={"large"} />,
         breadCrumbIcon: <EqualizerIcon style={iconStyle} color={"primary"} fontSize={"large"} />,
         exact: true,
@@ -36,4 +48,4 @@ export const routes = [
         isPublic: true,
         component: () => <Login />
     },
-];
+]

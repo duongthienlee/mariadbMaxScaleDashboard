@@ -1,0 +1,8 @@
+.expand-btn {
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+
+    &_active {
+        transform: scaleX(-1)
+    }
+}

@@ -1,6 +1,6 @@
-import reducer from './reducers';
-import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
+import reducer from './reducers'
+import { createStore, applyMiddleware, compose } from 'redux'
+import thunk from 'redux-thunk'
 
 // dev tools middleware
 const composeSetup = (process.env.NODE_ENV !== 'production' && typeof window === 'object' &&
@@ -9,5 +9,5 @@ const composeSetup = (process.env.NODE_ENV !== 'production' && typeof window ===
 const store = createStore(
     reducer,
     composeSetup(applyMiddleware(thunk))
-);
-export default store;
+)
+export default store

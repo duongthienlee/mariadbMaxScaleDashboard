@@ -10,7 +10,7 @@ const initialState = {
     isLoggedIn: false,
     error: false,
     errorMessage: ''
-};
+}
 
 // Reducing function
 export default (state = initialState, action) => {
@@ -38,7 +38,7 @@ export default (state = initialState, action) => {
             }
         }
         default: {
-            return state;
+            return state
         }
     }
 }
