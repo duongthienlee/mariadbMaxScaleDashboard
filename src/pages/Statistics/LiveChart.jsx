@@ -22,12 +22,12 @@ const LiveChart = ({ threads }) => {
             let obj = {
                 type: "line",
                 label: `THREAD ID - ${threads[i].id}`,
-                backgroundColor: "rgba(0, 0, 0, 0)",
-                borderColor: theme.palette.primary.main,
+                backgroundColor: theme.palette.primary.light, // background of the line
+                borderColor: theme.palette.primary.main, // line color
                 pointBackgroundColor: theme.palette.secondary.main,
-                pointBorderColor: theme.palette.secondary.main,
-                borderWidth: "2",
-                lineTension: 0.45,
+                pointBorderColor: "rgba(0, 0, 0, 0)",
+                borderWidth: 2,
+                lineTension: 0.25,
                 data: [threads[i].value.toString()]
             }
             arr.push(obj)
@@ -70,6 +70,10 @@ const LiveChart = ({ threads }) => {
                 data={lineChartData}
                 options={{
                     responsive: true,
+                    animation: {
+                        duration: 250 * 1.5,
+                        easing: 'linear'
+                    },
                     maintainAspectRatio: false,
                     tooltips: {
                         enabled: true
@@ -77,12 +81,19 @@ const LiveChart = ({ threads }) => {
                     scales: {
                         xAxes: [
                             {
+                                display: true,
                                 ticks: {
                                     autoSkip: true,
-                                    maxTicksLimit: 10
+                                    maxTicksLimit: 5
                                 }
                             }
-                        ]
+                        ],
+                        yAxes: [{
+                            ticks: {
+                                max: 100,
+                                min: 0
+                            }
+                        }]
                     }
                 }}
             />

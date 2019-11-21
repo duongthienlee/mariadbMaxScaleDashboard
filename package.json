@@ -52,6 +52,7 @@
     "@material-ui/icons": "^4.5.1",
     "axios": "^0.19.0",
     "chart.js": "^2.9.3",
+    "color": "^3.1.2",
     "eslint": "6.1.0",
     "immutability-helper": "^3.0.1",
     "install-peerdeps": "^1.10.2",

@@ -104,7 +104,7 @@ const AttributesTable = ({ serverInfo }) => {
                 onClose={handleClose}
             >
                 <Paper className={classes.paper}>
-                    <SubTable type={currentSubTableType} row={currentRow} />
+                  
                 </Paper>
             </Modal>
 
